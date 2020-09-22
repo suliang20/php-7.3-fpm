@@ -102,6 +102,7 @@ RUN \
     # for intl
     && docker-php-ext-install $mc intl \
     # no dependency extension
+    && docker-php-ext-install $mc mcrypt \
     && docker-php-ext-install $mc bcmath \
     && docker-php-ext-install $mc calendar \
     && docker-php-ext-install $mc exif \
@@ -115,7 +116,6 @@ RUN \
     && docker-php-ext-install $mc sysvmsg \
     && docker-php-ext-install $mc sysvsem \
     && docker-php-ext-install $mc sysvshm \
-    && docker-php-ext-install $mc mcrypt \
     # ================ Install PECL extensions ====================
     # for redis
     && pecl install redis && docker-php-ext-enable redis \
